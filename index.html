@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Updated App</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form id="city-search-form" class="search-bar">
+        <input
+          id="city-search-input"
+          class="search"
+          type="text"
+          placeholder="Search for a city"
+          autofocus="on"
+          size="30px"
+        />
+        <input type="submit" value="Search" />
+      </form>
+      <h1 class="cityName" id="cityName">City</h1>
+      <div class="main">
+        <div class="row">
+          <div class="col">
+            <h2 class="temperature" id="temperature">Temp</h2>
+          </div>
+          <div class="col">
+            <ul>
+              <li id="windspeed">Windspeed</li>
+              <li id="humidity">Humidity</li>
+              <li id="feels-like">Feels like</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="day">
+              <li id="date">Today's Date</li>
+              <li id="time">Today's Time</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Forecast for the next 5 days</h2>
+
+        <div class="row">
+          <div class="col-2">Mon</div>
+          <div class="col-2">Tue</div>
+          <div class="col-2">Wed</div>
+          <div class="col-2">Thu</div>
+          <div class="col-2">Fri</div>
+        </div>
+      </div>
+      <br />
+      <a
+        href="https://github.com/Chels-hub/Chelsea-weather-app"
+        target="_blank"
+        class="link"
+        >Open-source code</a
+      >
+      by Chelsea Dela Cruz
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

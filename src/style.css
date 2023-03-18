@@ -1,0 +1,61 @@
+h1 {
+  padding: 0px 30px;
+  font-family: "Roboto Slab", serif;
+  font-size: 40px;
+  margin: 0;
+}
+h2 {
+  font-family: "Roboto Slab", serif;
+}
+li {
+  list-style: none;
+  font-family: "Roboto Slab", serif;
+  padding: 0px 20px;
+}
+ul {
+  padding: 0;
+}
+body {
+  padding: 80px;
+}
+.day {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Slab", serif;
+  font-size: 25px;
+}
+.temperature {
+  margin: auto;
+  padding: 0px 30px;
+  font-size: 45px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: auto;
+  display: block;
+  border: 2px solid #808080;
+  border-radius: 5px;
+  padding: 10px 5px;
+}
+.col {
+  width: 30%;
+}
+.col-2 {
+  width: 20%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center;
+}
+.search-bar {
+  padding: 15px;
+  position: relative;
+  left: 30%;
+}
+.main {
+  padding: 0px 30px;
+}
