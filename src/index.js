@@ -1,33 +1,30 @@
 let now = new Date();
-let weekdays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let allMonths = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
 function showWeather(response) {
   console.log(response);
   let showTemp = document.querySelector("#temperature");
   let temperature = Math.round(response.data.main.temp);
+  let dateformat = document.querySelector("#date");
+  let iconformat = document.querySelector("#icon");
 
-  showTemp.innerHTML = `${temperature}°C`;
+  celciusTemp = response.data.main.temp;
+  showTemp.innerHTML = `${temperature}`;
   document.querySelector("#cityName").innerHTML = response.data.name;
   document.querySelector(
     "#windspeed"
@@ -38,6 +35,11 @@ function showWeather(response) {
   document.querySelector(
     "#feels-like"
   ).innerHTML = `Feels Like: ${response.data.main.feels_like}`;
+  dateformat.innerHTML = formatDate(response.data.dt * 1000);
+  iconformat.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchBox(event) {
@@ -48,17 +50,17 @@ function searchBox(event) {
   axios.get(apiUrl).then(showWeather);
 }
 
+function displayfahrenheitTemp(event) {
+  event.preventDefault();
+  let givenTemp = document.querySelector("#temperature");
+  let fahrenheitConversion = (celciusTemp * 9) / 5 + 32;
+  givenTemp.innerHTML = math.round(fahrenheitConversion);
+}
+
+let celciusTemp = null;
+
 let cityInput = document.querySelector("#city-search-form");
 cityInput.addEventListener("submit", searchBox);
 
-let today = weekdays[now.getDay()];
-let month = allMonths[now.getMonth()];
-let date = now.getDate();
-let year = now.getFullYear();
-let displayDate = document.querySelector("#date");
-displayDate.innerHTML = `${today}, ${month} ${date}, ${year}`;
-
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let displayTime = document.querySelector("#time");
-displayTime.innerHTML = `${hours}:${minutes}`;
+let fahrenheitLink = document.querySelector("#f-link");
+fahrenheitLink.addEventListener("click", displayfahrenheitTemp);
