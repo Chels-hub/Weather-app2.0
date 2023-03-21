@@ -19,12 +19,11 @@ function formatDate(timestamp) {
 function showWeather(response) {
   console.log(response);
   let showTemp = document.querySelector("#temperature");
-  let temperature = Math.round(response.data.main.temp);
+  let celciusTemp = Math.round(response.data.main.temp);
   let dateformat = document.querySelector("#date");
   let iconformat = document.querySelector("#icon");
 
-  celciusTemp = response.data.main.temp;
-  showTemp.innerHTML = `${temperature}`;
+  showTemp.innerHTML = `${celciusTemp}`;
   document.querySelector("#cityName").innerHTML = response.data.name;
   document.querySelector(
     "#windspeed"
