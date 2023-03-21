@@ -54,7 +54,7 @@ function displayfahrenheitTemp(event) {
   event.preventDefault();
   let givenTemp = document.querySelector("#temperature");
   let fahrenheitConversion = (celciusTemp * 9) / 5 + 32;
-  givenTemp.innerHTML = math.round(fahrenheitConversion);
+  givenTemp.innerHTML = Math.round(fahrenheitConversion);
 }
 
 let celciusTemp = null;
