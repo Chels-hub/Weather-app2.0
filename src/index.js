@@ -56,6 +56,8 @@ function displayfahrenheitTemp(event) {
   givenTemp.innerHTML = Math.round(displaycelciustemp);
 }
 
+let celciusLink = document.querySelector("#C-link");
+celciusLink.addEventListener("click", displayCelciusTemp);
 let celciusTemp = null;
 
 let cityInput = document.querySelector("#city-search-form");
