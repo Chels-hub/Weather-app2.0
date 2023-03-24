@@ -19,10 +19,10 @@ function formatDate(timestamp) {
 function showWeather(response) {
   console.log(response);
   let showTemp = document.querySelector("#temperature");
-  let celciusTemp = Math.round(response.data.main.temp);
   let dateformat = document.querySelector("#date");
   let iconformat = document.querySelector("#icon");
 
+  celciusTemp = Math.round(response.data.main.temp);
   showTemp.innerHTML = `${celciusTemp}`;
   document.querySelector("#cityName").innerHTML = response.data.name;
   document.querySelector(
@@ -52,8 +52,8 @@ function searchBox(event) {
 function displayfahrenheitTemp(event) {
   event.preventDefault();
   let givenTemp = document.querySelector("#temperature");
-  let fahrenheitConversion = (celciusTemp * 9) / 5 + 32;
-  givenTemp.innerHTML = Math.round(fahrenheitConversion);
+  let displaycelciustemp = celciusTemp;
+  givenTemp.innerHTML = Math.round(displaycelciustemp);
 }
 
 let celciusTemp = null;
