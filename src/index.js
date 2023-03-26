@@ -16,6 +16,29 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+function displayForecast() {
+  let forecastCard = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row justify-content-between">`;
+  let days = ["mon", "tues", "wed", "thurs", "fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col-2">
+              <div>
+                <img
+                  src="https://openweathermap.org/img/wn/10d@2x.png"
+                  class="icon"
+                  height="55px"
+                />
+              </div>
+              <span class="dayOfWeek"> ${day}</span>
+              <div>18 | <span>-2</span></div>
+            </div>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastCard.innerHTML = forecastHTML;
+}
 function showWeather(response) {
   console.log(response);
   let showTemp = document.querySelector("#temperature");
@@ -69,3 +92,5 @@ celciusLink.addEventListener("click", displayCelciusTemp);
 
 let cityInput = document.querySelector("#city-search-form");
 cityInput.addEventListener("submit", searchBox);
+
+displayForecast();
