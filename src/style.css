@@ -29,6 +29,11 @@ body {
   font-family: "Roboto Slab", serif;
   font-size: 25px;
 }
+.weather-forecast {
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+}
+
 .temperature {
   margin: auto;
   padding: 0px 30px;
@@ -39,7 +44,7 @@ body {
   font-family: "Roboto Slab", serif;
   font-size: 16px;
   position: relative;
-  right: 37px;
+  right: 32px;
   bottom: 19px;
 }
 .container {
